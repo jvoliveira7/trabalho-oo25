@@ -1,0 +1,192 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #41b883;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Botão de Voltar */
+.back-button {
+    display: inline-flex;
+    background-color: #fff;
+    color: #41b883;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #41b883;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Seção de Busca */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-container button {
+    background-color: #41b883;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #339c6c;
+}
+
+/* Lista de Professores */
+#lista-professores {
+    list-style: none;
+    padding: 0;
+    margin: 2rem;
+}
+
+#lista-professores li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#lista-professores li:hover {
+    background-color: #f1f1f1;
+}
+
+#lista-professores li h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#lista-professores li p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Formulário de Cadastro de Professor */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form button {
+    background-color: #41b883;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #339c6c;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 80%;
+    }
+
+    #lista-professores li {
+        width: 100%;
+        padding: 10px;
+    }
+
+    form input {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+    }
+}

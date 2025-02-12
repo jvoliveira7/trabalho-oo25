@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #41b883;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.back-button {
+    display: inline-flex;
+    background-color: #fff;
+    color: #41b883;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #41b883;
+    color: white;
+    transform: scale(1.05);
+}
+
+.cadastro-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.cadastro-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.cadastro-section label {
+    font-weight: bold;
+}
+
+.cadastro-section input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cadastro-section button {
+    padding: 0.5rem;
+    background-color: #41b883;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cadastro-section button:hover {
+    background-color: #339c6c;
+}
+
+.search-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-container button {
+    background-color: #41b883;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #339c6c;
+}
+
+#resultados {
+    padding: 2rem;
+    text-align: center;
+}
+
+#resultados h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#lista-alunos {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-alunos li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#lista-alunos li:hover {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 80%;
+    }
+
+    #resultados h2 {
+        font-size: 1.5rem;
+    }
+
+    #lista-alunos li {
+        width: 100%;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Escolas</title>
+    <link rel="stylesheet" href="css/escolas.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cadastro de Escolas</h1>
+    </header>
+
+    <main>
+
+        <section class="formulario">
+            <h2>Cadastrar Nova Escola</h2>
+            <form id="form-escola">
+                <label for="nome">Nome da Escola</label>
+                <input type="text" id="nome" placeholder="Digite o nome da escola" required />
+                
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" placeholder="Digite o endereço completo" required />
+                
+                <button type="submit">Cadastrar Escola</button>
+            </form>
+
+            <div id="mensagem-sucesso"></div>
+        </section>
+
+      
+        <section class="lista">
+            <h2>Escolas Cadastradas</h2>
+            <ul id="lista-escolas"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Sistema de Cadastro de Escolas</p>
+    </footer>
+
+    <script src="escolas.js"></script>
+</body>
+</html>

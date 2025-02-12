@@ -1,0 +1,103 @@
+/* Estilo do layout da página de login */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right, #42a5f5, #1e88e5);
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animação de transição do fundo */
+@keyframes gradientAnimation {
+    0% {
+        background-image: linear-gradient(to right, #42a5f5, #1e88e5);
+    }
+    50% {
+        background-image: linear-gradient(to right, #1e88e5, #42a5f5);
+    }
+    100% {
+        background-image: linear-gradient(to right, #42a5f5, #1e88e5);
+    }
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(-50%);
+    animation: slideUp 0.8s ease-out;
+    margin: 0 20px; /* Adiciona margem para não colar nas laterais */
+}
+
+/* Animação para o container de login */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #42a5f5;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animação de fade-in para o título */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #42a5f5;
+    box-shadow: 0 0 8px rgba(66, 165, 245, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e88e5;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; 
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Disciplinas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/disciplinas.css">
+</head>
+<body>
+    <header>
+        <i class="fas fa-school school-icon"></i> 
+        <h1>Gestão de Disciplinas</h1>
+        <a href="javascript:history.back()" class="back-button">Voltar</a>
+    </header>
+    <main>
+
+        <div class="search-container">
+            <input type="text" id="search-disciplinas" placeholder="Buscar disciplinas..." />
+            <button id="search-btn-disciplinas" onclick="searchDisciplinas()">Buscar</button>
+        </div>
+
+     
+        <h2>Lista de Disciplinas</h2>
+        <ul id="lista-disciplinas"></ul>
+        
+   
+        <h3>Cadastrar Nova Disciplina</h3>
+        <form id="form-disciplina">
+            <input type="text" id="nome" placeholder="Nome da Disciplina" required>
+            <input type="text" id="codigo" placeholder="Código da Disciplina" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+    <script src="js/disciplinas.js"></script>
+</body>
+</html>

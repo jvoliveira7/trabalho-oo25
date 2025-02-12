@@ -1,0 +1,242 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #e0f7fa; /* Cor de fundo azul clara */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #00796b; /* Cor verde escuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* Ícone de escola no canto superior esquerdo */
+.school-icon {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Botão de Voltar */
+.back-button {
+    display: inline-flex;
+    background-color: #ffffff;
+    color: #00796b;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #00796b;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Barra de Pesquisa */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #00796b;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-container button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #004d40;
+}
+
+/* Lista de Disciplinas */
+h2, h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #00796b;
+    margin-top: 2rem;
+}
+
+#lista-disciplinas {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 900px;
+}
+
+#lista-disciplinas li {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#lista-disciplinas li:hover {
+    background-color: #f1f1f1;
+}
+
+#lista-disciplinas li h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#lista-disciplinas li p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Formulário de Cadastro */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 3rem auto;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+}
+
+form input:focus, form button:focus {
+    outline: none;
+    border-color: #00796b;
+}
+
+form button {
+    background-color: #00796b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #004d40;
+}
+
+/* Rodapé */
+footer {
+    background-color: #00796b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Reduz a largura da pesquisa e lista */
+    .search-container {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .search-container input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .search-container button {
+        width: 80%;
+    }
+
+    #lista-disciplinas li {
+        width: 100%;
+        padding: 15px;
+    }
+
+    form {
+        width: 90%;
+        margin: 2rem auto;
+    }
+}
+/* Lista de Disciplinas */
+#lista-disciplinas {
+    list-style: none;
+    padding: 0;
+    margin: 2rem;
+}
+
+#lista-disciplinas li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#lista-disciplinas li:hover {
+    background-color: #f1f1f1;
+}
+
+#lista-disciplinas li h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#lista-disciplinas li p {
+    color: #666;
+    font-size: 1rem;
+}
