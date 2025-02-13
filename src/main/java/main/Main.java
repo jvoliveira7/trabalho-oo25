@@ -3,12 +3,13 @@ package main;
 import controllers.AlunoController;
 import controllers.DisciplinasController;
 import controllers.EscolaController;
+import controllers.ProfessorController; // Importando o controlador de Professores
 
 import io.javalin.Javalin;
 import repository.AlunoRepository;
 import repository.DisciplinaRepository;
 import repository.EscolaRepository;
-  // Importando o repositório de Professores
+import repository.ProfessorRepository; // Importando o repositório de Professores
 
 public class Main {
     public static void main(String[] args) {
@@ -30,7 +31,8 @@ public class Main {
         DisciplinasController disciplinasController = new DisciplinasController(disciplinaRepository);
 
         // Configuração dos repositórios e controladores para Professores
-      
+        ProfessorRepository professorRepository = new ProfessorRepository();
+        ProfessorController professorController = new ProfessorController(professorRepository);
 
         // Endpoints para Alunos
         app.get("/alunos", alunoController::listarTodos);
@@ -52,6 +54,10 @@ public class Main {
         app.put("/disciplinas/{codigo}", disciplinasController::editar);
         app.delete("/disciplinas/{codigo}", disciplinasController::excluir);
 
-  
+        // Endpoints para Professores
+        app.get("/professores", professorController::listarTodos);
+        app.get("/professores/{siape}", professorController::buscarPorSiape);
+        app.post("/professores", professorController::salvar);
+        app.delete("/professores/{siape}", professorController::excluir);
     }
 }

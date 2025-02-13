@@ -7,59 +7,75 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+
+    <!-- Cabeçalho -->
     <header>
         <div class="header-content">
             <h1>Sistema de Gestão Escolar</h1>
             <nav>
                 <ul>
-                    <li><a href="escolas.html">Escolas</a></li>
-                    <li><a href="alunos.html">Alunos</a></li>
-                    <li><a href="disciplinas.html">Disciplinas</a></li>
-                    <li><a href="professores.html">Professores</a></li>
+                    <li><a href="escolas.html">🏫 Escolas</a></li>
+                    <li><a href="alunos.html">🎓 Alunos</a></li>
+                    <li><a href="disciplinas.html">📚 Disciplinas</a></li>
+                    <li><a href="professores.html">👨‍🏫 Professores</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Barra de pesquisa -->
+    <div class="search-container">
+        <input type="text" placeholder="🔍 Pesquisar no sistema..." id="searchInput">
+        <button type="button">Buscar</button>
+    </div>
+
+    <!-- Conteúdo Principal -->
     <main>
         <section class="intro">
             <p>Bem-vindo ao sistema de gestão escolar. Escolha uma opção no menu acima para acessar mais informações.</p>
         </section>
 
+        <!-- Cartões de Acesso -->
         <section class="cards">
             <div class="card">
-                <img src="images/escola1.jpg" alt="Escola">
+                <img src="images/escola1.jpg" alt="Escolas">
                 <div class="card-content">
-                    <h2>Escolas</h2>
+                    <h2>🏫 Escolas</h2>
                     <p>Veja as escolas cadastradas no sistema.</p>
+                    <a href="escolas.html" class="btn">Acessar</a>
                 </div>
             </div>
             <div class="card">
-                <img src="images/escola2.jpg" alt="Alunos">
+                <img src="images/alunos.jpg" alt="Alunos">
                 <div class="card-content">
-                    <h2>Alunos</h2>
+                    <h2>🎓 Alunos</h2>
                     <p>Gerencie os alunos cadastrados no sistema.</p>
+                    <a href="alunos.html" class="btn">Acessar</a>
                 </div>
             </div>
             <div class="card">
                 <img src="images/disciplinas.png" alt="Disciplinas">
                 <div class="card-content">
-                    <h2>Disciplinas</h2>
+                    <h2>📚 Disciplinas</h2>
                     <p>Administre as disciplinas disponíveis.</p>
+                    <a href="disciplinas.html" class="btn">Acessar</a>
                 </div>
             </div>
             <div class="card">
                 <img src="images/professores.jpg" alt="Professores">
                 <div class="card-content">
-                    <h2>Professores</h2>
+                    <h2>👨‍🏫 Professores</h2>
                     <p>Gerencie os professores da instituição.</p>
+                    <a href="professores.html" class="btn">Acessar</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 Sistema de Gestão Escolar. Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>

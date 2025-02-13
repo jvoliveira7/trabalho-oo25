@@ -1,14 +1,14 @@
+/* Resetando estilos padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -16,22 +16,30 @@ body {
     min-height: 100vh;
 }
 
+/* Container geral para centralizar o conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
 header {
-    background-color: #41b883;
+    background-color: #41aab8;
     color: #fff;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
 }
 
+/* Botão de retorno */
 .back-button {
     display: inline-flex;
     background-color: #fff;
-    color: #41b883;
+    color: #41b8b2;
     text-decoration: none;
     padding: 10px 20px;
     font-size: 1rem;
@@ -46,16 +54,25 @@ header h1 {
     transform: scale(1.05);
 }
 
+/* Seção de cadastro de aluno */
 .cadastro-section {
+    background-color: #fff;
     padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.cadastro-section h2 {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .cadastro-section form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -71,7 +88,7 @@ header h1 {
 
 .cadastro-section button {
     padding: 0.5rem;
-    background-color: #41b883;
+    background-color: #41b0b8;
     color: white;
     border: none;
     border-radius: 4px;
@@ -83,74 +100,59 @@ header h1 {
     background-color: #339c6c;
 }
 
-.search-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.search-container input {
-    width: 300px;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 15px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.search-container button {
-    background-color: #41b883;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
-    margin-left: 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search-container button:hover {
-    background-color: #339c6c;
-}
-
+/* Seção de resultados */
 #resultados {
     padding: 2rem;
-    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #resultados h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-#lista-alunos {
-    list-style: none;
-    padding: 0;
+/* Tabela de alunos */
+#tabela-alunos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
 }
 
-#lista-alunos li {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#tabela-alunos th, #tabela-alunos td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-#lista-alunos li:hover {
+#tabela-alunos th {
+    background-color: #41b883;
+    color: white;
+}
+
+#tabela-alunos tr:hover {
     background-color: #f1f1f1;
 }
 
+/* Botão de excluir */
+.excluir-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.excluir-button:hover {
+    background-color: #ff3333;
+}
+
+/* Rodapé */
 footer {
     background-color: #333;
     color: white;
@@ -159,27 +161,21 @@ footer {
     margin-top: auto;
 }
 
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
-    .search-container {
-        flex-direction: column;
-        align-items: center;
+    .cadastro-section form {
+        max-width: 100%;
     }
 
-    .search-container input {
-        width: 80%;
-        margin-bottom: 10px;
-    }
-
-    .search-container button {
-        width: 80%;
+    .cadastro-section input {
+        width: 100%;
     }
 
     #resultados h2 {
         font-size: 1.5rem;
     }
 
-    #lista-alunos li {
-        width: 100%;
-        padding: 10px;
+    #tabela-alunos th, #tabela-alunos td {
+        padding: 8px;
     }
 }

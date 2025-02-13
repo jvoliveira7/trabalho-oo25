@@ -1,49 +1,79 @@
-
 function listarAlunos() {
     const listaAlunos = document.getElementById('lista-alunos');
-
     listaAlunos.innerHTML = '';
 
-   
     fetch('/alunos')
         .then(response => response.json())
         .then(alunos => {
-   
             alunos.forEach(aluno => {
-                const item = document.createElement('li');
-                item.textContent = `${aluno.nome} (Matrícula: ${aluno.matricula})`;
-                listaAlunos.appendChild(item);
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${aluno.nome}</td>
+                    <td>${aluno.matricula}</td>
+                    <td>
+                        <button class="excluir-button" onclick="excluirAluno(${aluno.matricula})">Excluir</button>
+                    </td>
+                `;
+                listaAlunos.appendChild(tr);
             });
 
             if (alunos.length === 0) {
-                const item = document.createElement('li');
-                item.textContent = 'Nenhum aluno cadastrado.';
-                listaAlunos.appendChild(item);
+                const tr = document.createElement('tr');
+                tr.innerHTML = '<td colspan="3">Nenhum aluno cadastrado.</td>';
+                listaAlunos.appendChild(tr);
             }
         })
         .catch(error => {
-            console.error('Erro ao carregar alunos:', error);
-            const item = document.createElement('li');
-            item.textContent = 'Erro ao carregar alunos.';
-            listaAlunos.appendChild(item);
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td colspan="3">Erro ao carregar alunos.</td>';
+            listaAlunos.appendChild(tr);
         });
 }
 
+function excluirAluno(matricula) {
+    if (confirm('Tem certeza que deseja excluir este aluno?')) {
+        fetch(`/alunos/${matricula}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Aluno excluído com sucesso!');
+                listarAlunos();
+            } else {
+                alert('Erro ao excluir aluno.');
+            }
+        })
+        .catch(error => {
+            alert('Erro ao excluir aluno. Verifique o console para mais detalhes.');
+        });
+    }
+}
 
 document.getElementById('form-cadastro-aluno').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
+    const matricula = parseInt(document.getElementById('matricula').value);
+    const nome = document.getElementById('nome').value.trim();
+    const cpf = document.getElementById('cpf').value.trim();
+    const dataNascimento = document.getElementById('dataNascimento').value;
+    const endereco = document.getElementById('endereco').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!matricula || !nome || !cpf || !dataNascimento || !endereco || !telefone || !email) {
+        alert("Todos os campos devem ser preenchidos.");
+        return;
+    }
 
     const aluno = {
-        matricula: parseInt(document.getElementById('matricula').value),
-        nome: document.getElementById('nome').value,
-        cpf: document.getElementById('cpf').value,
-        dataNascimento: document.getElementById('dataNascimento').value,
-        endereco: document.getElementById('endereco').value,
-        telefone: document.getElementById('telefone').value,
-        email: document.getElementById('email').value
+        matricula,
+        nome,
+        cpf,
+        dataNascimento,
+        endereco,
+        telefone,
+        email
     };
-
 
     fetch('/alunos', {
         method: 'POST',
@@ -54,19 +84,21 @@ document.getElementById('form-cadastro-aluno').addEventListener('submit', functi
     })
     .then(response => {
         if (response.ok) {
+            return response.text();  
+        } 
+    })
+    .then(responseText => {
+        if (typeof responseText === 'string') {
             alert('Aluno cadastrado com sucesso!');
-            document.getElementById('form-cadastro-aluno').reset(); 
-            listarAlunos(); 
-            response.text().then(errorMessage => {
-                alert('Erro ao cadastrar aluno: ' + errorMessage);
-            });
+            document.getElementById('form-cadastro-aluno').reset();  
+            listarAlunos();  
+        } else {
+            alert(`Erro ao cadastrar aluno: ${responseText.message || 'Desconhecido'}`);
         }
     })
     .catch(error => {
-        console.error('Erro:', error);
-        alert('Erro ao cadastrar aluno. Verifique o console para mais detalhes.');
+        alert(`Erro ao cadastrar aluno. Verifique o console para mais detalhes.`);
     });
 });
-
 
 document.addEventListener('DOMContentLoaded', listarAlunos);

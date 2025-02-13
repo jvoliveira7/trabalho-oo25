@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Alunos</title>
     <link rel="stylesheet" href="css/alunos.css">
 </head>
+
 <body>
     <header>
-        <h1>Gestão de Alunos</h1>
-        <a href="javascript:history.back()" class="back-button">Voltar</a>
+        <div class="container">
+            <h1>Gestão de Alunos</h1>
+            <a href="javascript:history.back()" class="back-button">Voltar</a>
+        </div>
     </header>
+
     <main>
+        <div class="container">
+            <!-- Cadastro de novo aluno -->
+            <section class="cadastro-section">
+                <h2>Cadastrar Novo Aluno</h2>
+                <form id="form-cadastro-aluno">
+                    <div class="input-group">
+                        <label for="matricula">Matrícula:</label>
+                        <input type="number" id="matricula" name="matricula" required>
+                    </div>
 
-        <section class="cadastro-section">
-            <h2>Cadastrar Novo Aluno</h2>
-            <form id="form-cadastro-aluno">
-                <label for="matricula">Matrícula:</label>
-                <input type="number" id="matricula" name="matricula" required>
+                    <div class="input-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
 
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                    <div class="input-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                    </div>
 
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" required>
+                    <div class="input-group">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" required>
+                    </div>
 
-                <label for="dataNascimento">Data de Nascimento:</label>
-                <input type="date" id="dataNascimento" name="dataNascimento" required>
+                    <div class="input-group">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
 
-                <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco" required>
+                    <div class="input-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required>
+                    </div>
 
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" required>
+                    <div class="input-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
 
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
-
-
-        <section id="resultados">
-            <h2>Lista de Alunos</h2>
-            <ul id="lista-alunos"></ul>
-        </section>
+            <!-- Lista de alunos -->
+            <section id="resultados">
+                <h2>Lista de Alunos</h2>
+                <table id="tabela-alunos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matricula</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-alunos">
+                        <!-- Alunos serão carregados aqui -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2025 Gestão de Alunos - Todos os direitos reservados</p>
+        <div class="container">
+            <p>&copy; 2025 Gestão de Alunos - Todos os direitos reservados</p>
+        </div>
     </footer>
+
     <script src="js/alunos.js"></script>
 </body>
+
 </html>
