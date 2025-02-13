@@ -21,6 +21,7 @@ public class Professor {
         this.email = email;
     }
 
+    // Getters e Setters
     public String getSiape() { return siape; }
     public void setSiape(String siape) { this.siape = siape; }
     public String getNome() { return nome; }

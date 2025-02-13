@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Escolas</title>
+    <title>Gestão de Escolas</title>
     <link rel="stylesheet" href="css/escolas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <h1>Cadastro de Escolas</h1>
+        <div class="header-content">
+            <i class="fas fa-school school-icon"></i>
+            <h1>Gestão de Escolas</h1>
+        </div>
     </header>
 
     <main>
-
+        <!-- Seção de Cadastro de Escolas -->
         <section class="formulario">
-            <h2>Cadastrar Nova Escola</h2>
+            <h2><i class="fas fa-plus-circle"></i> Cadastrar Nova Escola</h2>
             <form id="form-escola">
-                <label for="nome">Nome da Escola</label>
-                <input type="text" id="nome" placeholder="Digite o nome da escola" required />
-                
-                <label for="endereco">Endereço</label>
-                <input type="text" id="endereco" placeholder="Digite o endereço completo" required />
-                
-                <button type="submit">Cadastrar Escola</button>
+                <div class="form-group">
+                    <label for="nome"><i class="fas fa-school"></i> Nome da Escola</label>
+                    <input type="text" id="nome" placeholder="Digite o nome da escola" required />
+                </div>
+                <div class="form-group">
+                    <label for="endereco"><i class="fas fa-map-marker-alt"></i> Endereço</label>
+                    <input type="text" id="endereco" placeholder="Digite o endereço completo" required />
+                </div>
+                <div class="form-group">
+                    <label for="contato"><i class="fas fa-phone"></i> Contato</label>
+                    <input type="text" id="contato" placeholder="Digite o contato" required />
+                </div>
+                <button type="submit"><i class="fas fa-save"></i> Cadastrar Escola</button>
             </form>
-
-            <div id="mensagem-sucesso"></div>
         </section>
 
-      
+        <!-- Seção de Listagem de Escolas -->
         <section class="lista">
-            <h2>Escolas Cadastradas</h2>
+            <h2><i class="fas fa-list"></i> Escolas Cadastradas</h2>
             <ul id="lista-escolas"></ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Sistema de Cadastro de Escolas</p>
+        <p>&copy; 2025 - Sistema de Gestão de Escolas</p>
     </footer>
 
-    <script src="escolas.js"></script>
+    <script src="js/escolas.js"></script>
 </body>
 </html>

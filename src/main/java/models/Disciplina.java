@@ -5,17 +5,21 @@ public class Disciplina {
     private String nome;
     private String ementa;
     private int cargaHoraria;
-    private Professor professorResponsavel;
+    private String siapeProfessor; // SIAPE do professor responsável
 
-    public Disciplina(String codigo, String nome, String ementa, int cargaHoraria, Professor professorResponsavel) {
+    // Construtor vazio (obrigatório para o Javalin)
+    public Disciplina() {}
+
+    // Construtor com todos os campos
+    public Disciplina(String codigo, String nome, String ementa, int cargaHoraria, String siapeProfessor) {
         this.codigo = codigo;
         this.nome = nome;
         this.ementa = ementa;
         this.cargaHoraria = cargaHoraria;
-        this.professorResponsavel = professorResponsavel;
+        this.siapeProfessor = siapeProfessor;
     }
 
-
+    // Getters e Setters
     public String getCodigo() { return codigo; }
     public void setCodigo(String codigo) { this.codigo = codigo; }
     public String getNome() { return nome; }
@@ -24,17 +28,6 @@ public class Disciplina {
     public void setEmenta(String ementa) { this.ementa = ementa; }
     public int getCargaHoraria() { return cargaHoraria; }
     public void setCargaHoraria(int cargaHoraria) { this.cargaHoraria = cargaHoraria; }
-    public Professor getProfessorResponsavel() { return professorResponsavel; }
-    public void setProfessorResponsavel(Professor professorResponsavel) { this.professorResponsavel = professorResponsavel; }
-
-    @Override
-    public String toString() {
-        return "Disciplina{" +
-                "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +
-                ", ementa='" + ementa + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
-                ", professorResponsavel=" + professorResponsavel +
-                '}';
-    }
+    public String getSiapeProfessor() { return siapeProfessor; }
+    public void setSiapeProfessor(String siapeProfessor) { this.siapeProfessor = siapeProfessor; }
 }

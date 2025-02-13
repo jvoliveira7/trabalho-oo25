@@ -13,25 +13,33 @@
         <h1>Gestão de Disciplinas</h1>
         <a href="javascript:history.back()" class="back-button">Voltar</a>
     </header>
-    <main>
 
+    <main>
         <div class="search-container">
             <input type="text" id="search-disciplinas" placeholder="Buscar disciplinas..." />
             <button id="search-btn-disciplinas" onclick="searchDisciplinas()">Buscar</button>
         </div>
 
-     
         <h2>Lista de Disciplinas</h2>
         <ul id="lista-disciplinas"></ul>
-        
-   
+
         <h3>Cadastrar Nova Disciplina</h3>
         <form id="form-disciplina">
-            <input type="text" id="nome" placeholder="Nome da Disciplina" required>
             <input type="text" id="codigo" placeholder="Código da Disciplina" required>
+            <input type="text" id="nome" placeholder="Nome da Disciplina" required>
+            <input type="text" id="professor" placeholder="Nome do Professor" required>
+            <input type="number" id="cargaHoraria" placeholder="Carga Horária (h)" required>
+            <textarea id="ementa" placeholder="Ementa da Disciplina" required></textarea>
             <button type="submit">Cadastrar</button>
         </form>
+
+        <h3>Excluir Disciplina</h3>
+        <form id="form-excluir-disciplina">
+            <input type="text" id="codigo-excluir" placeholder="Código da Disciplina" required>
+            <button type="button" onclick="excluirDisciplina()">Excluir</button>
+        </form>
     </main>
+
     <script src="js/disciplinas.js"></script>
 </body>
 </html>
